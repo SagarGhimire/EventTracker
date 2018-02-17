@@ -1,9 +1,11 @@
 package com.example.s525189.eventtracker;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.TextView;
 
@@ -21,6 +23,13 @@ public class homeActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(MenuItem item) {
                 if (item.getItemId() == R.id.map) {
+                    Log.d("web access","starting web action");
+                    String uri= "https://www.nwmissouri.edu/maps/index.htm";
+                    Intent webit = new Intent(Intent.ACTION_VIEW);
+                    Uri weburi = Uri.parse(uri);
+                    webit.setData(weburi);
+                    startActivity(webit);
+                    Log.d("web access","returned from start activity");
 
                 } else if (item.getItemId() == R.id.event) {
 
@@ -29,9 +38,9 @@ public class homeActivity extends AppCompatActivity {
                 }
 
 
-                else if (item.getItemId() == R.id.ven) {
+                else if (item.getItemId() == R.id.venue) {
 
-                } else if (item.getItemId() == R.id.pro) {
+                } else if (item.getItemId() == R.id.profile) {
 
                 }
 

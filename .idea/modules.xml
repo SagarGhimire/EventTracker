@@ -4,7 +4,9 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/EventTracker.iml" filepath="$PROJECT_DIR$/EventTracker.iml" />
       <module fileurl="file://C:\Users\s525389\Desktop\EventTrackers\EventTracker\EventTracker.iml" filepath="C:\Users\s525389\Desktop\EventTrackers\EventTracker\EventTracker.iml" />
+      <module fileurl="file://C:\Users\s525286\Desktop\asdas\EventTracker\EventTracker.iml" filepath="C:\Users\s525286\Desktop\asdas\EventTracker\EventTracker.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Users\s525286\Desktop\asdas\EventTracker\app\app.iml" filepath="C:\Users\s525286\Desktop\asdas\EventTracker\app\app.iml" />
       <module fileurl="file://C:\Users\s525389\Desktop\EventTrackers\EventTracker\app\app.iml" filepath="C:\Users\s525389\Desktop\EventTrackers\EventTracker\app\app.iml" />
     </modules>
   </component>
