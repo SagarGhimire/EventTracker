@@ -23,7 +23,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".homeActivity"></activity>
+        <activity android:name=".homeActivity" />
+        <activity android:name=".event"></activity>
     </application>
 
 </manifest>
