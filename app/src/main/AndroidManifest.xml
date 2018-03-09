@@ -24,7 +24,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".homeActivity" />
-        <activity android:name=".event"></activity>
+        <activity android:name=".event" />
+        <activity android:name=".ProfileActivity"></activity>
     </application>
 
 </manifest>
