@@ -88,7 +88,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             @Override
             public void onClick(View view) {
                 attemptLogin();
-                Intent i = new Intent(LoginActivity.this,homeActivity.class);
+                Intent i = new Intent(LoginActivity.this, homeActivity.class);
                 startActivity(i);
             }
         });
@@ -101,7 +101,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             @Override
             public void onClick(View view) {
                 attemptLogin();
-                Intent i = new Intent(LoginActivity.this,homeActivity.class);
+                Intent i = new Intent(LoginActivity.this, AdminActivity.class);
                 startActivity(i);
             }
         });

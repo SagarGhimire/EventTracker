@@ -12,10 +12,11 @@ import android.widget.TextView;
 public class VenuActivity extends AppCompatActivity {
     private TextView infoTextView;
     private BottomNavigationView bottomNavigationView;
+
     @Override
-        protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_main);
-        }
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
 
 }

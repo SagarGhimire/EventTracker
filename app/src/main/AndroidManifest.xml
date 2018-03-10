@@ -26,8 +26,12 @@
         <activity android:name=".homeActivity" />
         <activity android:name=".event" />
         <activity android:name=".ProfileActivity" />
+
+        <activity android:name=".AdminActivity" />
+        <activity android:name=".EventSubmitActivity"></activity>
         <activity android:name=".MainActivity" />
         <activity android:name=".VenuActivity"></activity>
+        >>>>>>> a64696e02e7b8ccf466882584f6e92316ac9eef7
     </application>
 
 </manifest>
