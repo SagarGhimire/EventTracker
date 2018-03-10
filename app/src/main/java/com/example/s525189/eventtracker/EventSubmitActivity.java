@@ -9,5 +9,8 @@ public class EventSubmitActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_submit);
+        Log.d("second access", "starting web action");
+
+
     }
 }
