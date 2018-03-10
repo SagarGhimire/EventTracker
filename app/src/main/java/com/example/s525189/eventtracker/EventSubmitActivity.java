@@ -2,6 +2,7 @@ package com.example.s525189.eventtracker;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 
 public class EventSubmitActivity extends AppCompatActivity {
 
@@ -10,6 +11,7 @@ public class EventSubmitActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_submit);
         Log.d("second access", "starting web action");
+
 
 
     }

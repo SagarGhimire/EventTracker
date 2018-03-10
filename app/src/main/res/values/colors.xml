@@ -3,6 +3,10 @@
     <color name="colorPrimary">#07f5aa</color>
     <color name="colorPrimaryDark">#41bab2</color>
     <color name="colorAccent">#FF4081</color>
+<<<<<<< HEAD
     <color name="light_black">#504f4f</color>
     <color name="black">#000000</color>
+=======
+    <color name ="black">#000000</color>
+>>>>>>> f5a8f33f616013ffe542761cabf11db1e3e6704f
 </resources>

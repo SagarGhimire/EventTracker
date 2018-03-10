@@ -23,6 +23,9 @@ public class AdminActivity extends AppCompatActivity {
                 Intent intent = new Intent(AdminActivity.this, EventSubmitActivity.class);
                 intent.putExtra("Class", "A");
                 startActivityForResult(intent, SECOND_ACTIVITY_REQUEST_CODE);
+
+                Log.d("web access", "returned from start activity");
+
             }
         });
 
