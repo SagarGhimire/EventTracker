@@ -39,6 +39,8 @@ public class homeActivity extends AppCompatActivity {
 
 
                 else if (item.getItemId() == R.id.venue) {
+                    Intent x = new Intent(homeActivity.this,VenuActivity.class);
+                    startActivity(x);
 
                 } else if (item.getItemId() == R.id.profile) {
                     Intent prfle = new Intent(homeActivity.this,ProfileActivity.class);
