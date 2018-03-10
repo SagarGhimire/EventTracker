@@ -4,8 +4,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/gradient"
     android:orientation="vertical"
-    android:padding="16dp"
-   >
+    android:padding="16dp">
 
     <TextView
         android:id="@+id/contact_form_title"

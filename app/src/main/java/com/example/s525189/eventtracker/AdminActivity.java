@@ -9,6 +9,7 @@ import android.widget.Button;
 
 public class AdminActivity extends AppCompatActivity {
     private static final int SECOND_ACTIVITY_REQUEST_CODE = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

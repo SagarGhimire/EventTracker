@@ -88,7 +88,20 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             @Override
             public void onClick(View view) {
                 attemptLogin();
-                Intent i = new Intent(LoginActivity.this,homeActivity.class);
+                Intent i = new Intent(LoginActivity.this, homeActivity.class);
+                startActivity(i);
+            }
+        });
+
+        mLoginFormView = findViewById(R.id.login_form);
+        mProgressView = findViewById(R.id.login_progress);
+
+        Button AdminSignInButton = (Button) findViewById(R.id.admin_sign_in_button);
+        AdminSignInButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                attemptLogin();
+                Intent i = new Intent(LoginActivity.this, AdminActivity.class);
                 startActivity(i);
             }
         });

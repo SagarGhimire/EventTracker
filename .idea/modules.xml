@@ -4,13 +4,22 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Event Tracker.iml" filepath="$PROJECT_DIR$/Event Tracker.iml" />
       <module fileurl="file://C:\Users\s525286\Desktop\asdas\EventTracker\EventTracker.iml" filepath="C:\Users\s525286\Desktop\asdas\EventTracker\EventTracker.iml" />
+      <module fileurl="file://C:\Users\s525389\Desktop\Event Tracker\EventTracker\EventTracker.iml" filepath="C:\Users\s525389\Desktop\Event Tracker\EventTracker\EventTracker.iml" />
+      <module fileurl="file://C:\Users\s525286\Desktop\Event Tracker\EventTracker.iml" filepath="C:\Users\s525286\Desktop\Event Tracker\EventTracker.iml" />
       <module fileurl="file://C:\Users\s525389\Desktop\EventTrackers\EventTracker\EventTracker.iml" filepath="C:\Users\s525389\Desktop\EventTrackers\EventTracker\EventTracker.iml" />
       <module fileurl="file://C:\Users\s524878\Desktop\Event Tracker\EventTracker.iml" filepath="C:\Users\s524878\Desktop\Event Tracker\EventTracker.iml" />
       <module fileurl="file://C:\Users\s525389\Desktop\Event Tracker\EventTracker\EventTracker.iml" filepath="C:\Users\s525389\Desktop\Event Tracker\EventTracker\EventTracker.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+<<<<<<< HEAD
       <module fileurl="file://C:\Users\s525389\Desktop\Event Tracker\EventTracker\app\app.iml" filepath="C:\Users\s525389\Desktop\Event Tracker\EventTracker\app\app.iml" />
       <module fileurl="file://C:\Users\s525389\Desktop\EventTrackers\EventTracker\app\app.iml" filepath="C:\Users\s525389\Desktop\EventTrackers\EventTracker\app\app.iml" />
       <module fileurl="file://C:\Users\s525286\Desktop\asdas\EventTracker\app\app.iml" filepath="C:\Users\s525286\Desktop\asdas\EventTracker\app\app.iml" />
+=======
+      <module fileurl="file://C:\Users\s525286\Desktop\Event Tracker\app\app.iml" filepath="C:\Users\s525286\Desktop\Event Tracker\app\app.iml" />
+      <module fileurl="file://C:\Users\s525286\Desktop\asdas\EventTracker\app\app.iml" filepath="C:\Users\s525286\Desktop\asdas\EventTracker\app\app.iml" />
+      <module fileurl="file://C:\Users\s525389\Desktop\EventTrackers\EventTracker\app\app.iml" filepath="C:\Users\s525389\Desktop\EventTrackers\EventTracker\app\app.iml" />
+      <module fileurl="file://C:\Users\s525389\Desktop\Event Tracker\EventTracker\app\app.iml" filepath="C:\Users\s525389\Desktop\Event Tracker\EventTracker\app\app.iml" />
+>>>>>>> a64696e02e7b8ccf466882584f6e92316ac9eef7
     </modules>
   </component>
 </project>
