@@ -42,11 +42,8 @@ public class ProfileActivity extends AppCompatActivity {
                     webit.setData(weburi);
                     startActivity(webit);
                     Log.d("web access", "returned from start activity");
-                } else if (item.getItemId() == R.id.event) {
-
-                    Intent i = new Intent(ProfileActivity.this, event.class);
-                    startActivity(i);
-                } else if (item.getItemId() == R.id.venue) {
+                }
+                else if (item.getItemId() == R.id.venue) {
                     Intent x = new Intent(ProfileActivity.this, VenuActivity.class);
                     startActivity(x);
                 }
