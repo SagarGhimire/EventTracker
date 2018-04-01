@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../EventTracker.iml" filepath="$PROJECT_DIR$/../EventTracker.iml" />
+      <module fileurl="file://C:\Users\s525189\Desktop\EventTracker\EventTracker.iml" filepath="C:\Users\s525189\Desktop\EventTracker\EventTracker.iml" />
       <module fileurl="file://$PROJECT_DIR$/app.iml" filepath="$PROJECT_DIR$/app.iml" />
+      <module fileurl="file://C:\Users\s525189\Desktop\EventTracker\app\app.iml" filepath="C:\Users\s525189\Desktop\EventTracker\app\app.iml" />
     </modules>
   </component>
 </project>
