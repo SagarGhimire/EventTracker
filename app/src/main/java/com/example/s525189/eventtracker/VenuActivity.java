@@ -31,9 +31,6 @@ public class VenuActivity extends AppCompatActivity {
                     webit.setData(weburi);
                     startActivity(webit);
                     Log.d("web access", "returned from start activity");
-                } else if (item.getItemId() == R.id.event) {
-                    Intent i = new Intent(VenuActivity.this, event.class);
-                    startActivity(i);
                 }
 
 
