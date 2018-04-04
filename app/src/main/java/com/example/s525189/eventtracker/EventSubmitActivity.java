@@ -12,6 +12,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class EventSubmitActivity extends AppCompatActivity {
+
+
     private Button submitButton;
     EditText name;
     EditText email;
