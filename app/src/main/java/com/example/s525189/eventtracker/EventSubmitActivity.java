@@ -12,8 +12,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class EventSubmitActivity extends AppCompatActivity {
-
-
     private Button submitButton;
     EditText name;
     EditText email;
@@ -29,7 +27,7 @@ public class EventSubmitActivity extends AppCompatActivity {
         Log.d("second access", "starting web action");
 
         databaseEvents= FirebaseDatabase.getInstance().getReference("events");
-    Button submitBtn = (Button) findViewById(R.id.submitButton);
+        Button submitBtn = (Button) findViewById(R.id.submitButton);
         name = (EditText) findViewById(R.id.name);
         email = (EditText) findViewById(R.id.email);
         eventName = (EditText) findViewById(R.id.eventName);
@@ -37,13 +35,13 @@ public class EventSubmitActivity extends AppCompatActivity {
         Abstract = (EditText) findViewById(R.id.Abstract);
 
 
-submitBtn.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View view) {
-        addEvent();
+        submitBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                addEvent();
 
-    }
-});
+            }
+        });
 
     }
 
@@ -68,3 +66,5 @@ submitBtn.setOnClickListener(new View.OnClickListener() {
         }
     }
 }
+
+
