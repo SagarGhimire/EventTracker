@@ -42,6 +42,7 @@ public class LoginActivity extends AppCompatActivity {
         dummyData.add("919593265");
         dummyData.add("919511639");
         txt = (TextView) findViewById(R.id.labelTV);
+        txt.setVisibility(View.GONE);
 
 
 
@@ -54,23 +55,27 @@ public class LoginActivity extends AppCompatActivity {
                 EditText dummyNum = (EditText) findViewById(R.id.email);
                 String dummyValue = dummyNum.getText().toString();
                 checkInfo = checkAuthentication(dummyData, dummyValue);
+
                 if (checkInfo == true) {
 
                     Intent i = new Intent(LoginActivity.this, homeActivity.class);
                     startActivity(i);
                 } else {
+                    txt.setVisibility(View.VISIBLE);
                     txt.setText("Incorrect Credentials");
+
 
                 }
             }
         });
 
 
+
         Button AdminSignInButton = (Button) findViewById(R.id.admin_sign_in_button);
         AdminSignInButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent x = new Intent(LoginActivity.this, AdminActivity.class);
+                Intent x = new Intent(LoginActivity.this, AdminLogin.class);
                 startActivity(x);
 
             }
