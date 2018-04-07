@@ -8,8 +8,8 @@ public class EventDetail {
     String id;
     String name;
     String email;
-    static String eventName;
-    static String phoneNumber;
+    String eventName;
+    String phoneNumber;
 
     String Abstract;
 
@@ -46,7 +46,7 @@ public class EventDetail {
         this.email = email;
     }
 
-    public static String getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
@@ -54,7 +54,7 @@ public class EventDetail {
         this.phoneNumber = phoneNumber;
     }
 
-    public static String getEventName() {
+    public String getEventName() {
         return eventName;
     }
 

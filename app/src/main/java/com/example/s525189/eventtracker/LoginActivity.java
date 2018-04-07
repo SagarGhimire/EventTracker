@@ -45,8 +45,6 @@ public class LoginActivity extends AppCompatActivity {
         txt.setVisibility(View.GONE);
 
 
-
-
         Button mEmailSignInButton = (Button) findViewById(R.id.email_sign_in_button);
 
         mEmailSignInButton.setOnClickListener(new OnClickListener() {
@@ -70,16 +68,15 @@ public class LoginActivity extends AppCompatActivity {
         });
 
 
-
         Button AdminSignInButton = (Button) findViewById(R.id.admin_sign_in_button);
         AdminSignInButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent x = new Intent(LoginActivity.this, AdminLogin.class);
                 startActivity(x);
-
             }
         });
+
 
     }
 
