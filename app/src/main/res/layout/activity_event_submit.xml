@@ -53,7 +53,7 @@
         android:inputType="phone" />
 
     <EditText
-        android:id="@+id/Abstract"
+        android:id="@+id/Summary"
         android:layout_width="fill_parent"
         android:layout_height="150dp"
         android:layout_marginBottom="10dp"

@@ -11,19 +11,19 @@ public class EventDetail {
     String eventName;
     String phoneNumber;
 
-    String Abstract;
+    String summary;
 
     public EventDetail(){
 
     }
     public EventDetail(String id,String name, String email,
-                        String eventName,String phoneNumber, String Abstract ){
+                        String eventName,String phoneNumber, String summary ){
     this.id =id;
         this.name =name;
         this.email =email;
         this.phoneNumber = phoneNumber;
         this.eventName=eventName;
-        this.Abstract= Abstract;
+        this.summary= summary;
 }
 
     public String getId() {
@@ -62,11 +62,11 @@ public class EventDetail {
         this.eventName = eventName;
     }
 
-    public String getAbstract() {
-        return Abstract;
+    public String getSummary() {
+        return summary;
     }
 
-    public void setAbstract(String anAbstract) {
-        Abstract = anAbstract;
+    public void setSummary(String aSummary) {
+        summary = aSummary;
     }
 }

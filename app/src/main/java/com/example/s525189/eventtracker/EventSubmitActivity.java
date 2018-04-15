@@ -1,13 +1,15 @@
 package com.example.s525189.eventtracker;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -19,7 +21,7 @@ public class EventSubmitActivity extends AppCompatActivity {
     EditText email;
     EditText eventName;
     EditText phone;
-    EditText Abstract;
+    EditText Summary;
 
     DatabaseReference databaseEvents;
     @Override
@@ -34,13 +36,15 @@ public class EventSubmitActivity extends AppCompatActivity {
         email = (EditText) findViewById(R.id.email);
         eventName = (EditText) findViewById(R.id.eventName);
         phone = (EditText) findViewById(R.id.phone);
-        Abstract = (EditText) findViewById(R.id.Abstract);
+       Summary = (EditText) findViewById(R.id.Summary);
 
 
         submitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 addEvent();
+                Intent  a = new Intent(EventSubmitActivity.this,homeActivity.class);
+                startActivity(a);
 
             }
         });
@@ -52,13 +56,13 @@ public class EventSubmitActivity extends AppCompatActivity {
         String getemail = email.getText().toString();
         String geteventName = eventName.getText().toString();
         String getphone = phone.getText().toString();
-        String getabstract = Abstract.getText().toString();
+        String getSummary = Summary.getText().toString();
 
         if(!TextUtils.isEmpty(getname) && !TextUtils.isEmpty(getemail)&&!TextUtils.isEmpty(geteventName)
-                && !TextUtils.isEmpty(getphone) && !TextUtils.isEmpty(getabstract)){
+                && !TextUtils.isEmpty(getphone) && !TextUtils.isEmpty(getSummary)){
 
             String id =databaseEvents.push().getKey();
-            EventDetail event1 = new EventDetail(id,getname, getemail,geteventName,getphone,getabstract);
+            EventDetail event1 = new EventDetail(id,getname, getemail,geteventName,getphone,getSummary);
             databaseEvents.child(id).setValue(event1);
             Toast.makeText(this,"EventAdded",Toast.LENGTH_LONG).show();
         }

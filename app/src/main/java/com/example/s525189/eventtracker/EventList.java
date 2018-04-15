@@ -2,7 +2,6 @@ package com.example.s525189.eventtracker;
 import android.app.Activity;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.util.EventLog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,8 +29,8 @@ public class EventList extends ArrayAdapter<EventDetail>{
         TextView textVieweventcontact = (TextView) listViewItem.findViewById(R.id.textView2);
 
         EventDetail event = EventList.get(position);
-        textVieweventName.setText(EventDetail.getEventName());
-        textVieweventcontact.setText(EventDetail.getPhoneNumber());
+       // textVieweventName.setText(EventDetail.getEventName());
+      //  textVieweventcontact.setText(EventDetail.getPhoneNumber());
 
         return listViewItem;
     }

@@ -2,25 +2,63 @@ package com.example.s525189.eventtracker;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Bundle;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class homeActivity extends AppCompatActivity {
     private TextView infoTextView;
     private BottomNavigationView bottomNavigationView;
-
+    private
+    DatabaseReference databaseEvents;
+    final List<String> eventLister = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        final ArrayAdapter<String> detailEvents = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,eventLister);
         setContentView(R.layout.activity_home);
+        databaseEvents = FirebaseDatabase.getInstance().getReference();
+        databaseEvents.child("events").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                try {
+                    Iterable<DataSnapshot> children = dataSnapshot.getChildren();
+                    for (DataSnapshot ds : children) {
+                        EventDetail detail = ds.getValue(EventDetail.class);
+                        String eventName = detail.getEventName();
+                        eventLister.add(eventName);
+                    }
 
-        //infoTextView =(TextView) findViewById(R.id.infoTextView);
-        bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavigationView);
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+                    ListView myList3 = findViewById(R.id.list1);
+                    myList3.setAdapter(detailEvents);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+
+        BottomNavigationView  bottomNavigationView1 = (BottomNavigationView) findViewById(R.id.bottomNavigationView);
+        bottomNavigationView1.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem item) {
                 if (item.getItemId() == R.id.map) {
@@ -32,8 +70,7 @@ public class homeActivity extends AppCompatActivity {
                     startActivity(webit);
                     Log.d("web access", "returned from start activity");
 
-                }
-                 else if (item.getItemId() == R.id.venue) {
+                } else if (item.getItemId() == R.id.venue) {
                     Intent x = new Intent(homeActivity.this, VenuActivity.class);
                     startActivity(x);
 
@@ -48,5 +85,4 @@ public class homeActivity extends AppCompatActivity {
             }
         });
     }
-
 }
