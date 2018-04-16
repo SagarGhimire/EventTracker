@@ -51,7 +51,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="****"
-        android:inputType="text" />
+        android:inputType="textPassword" />
 
     <ScrollView
         android:id="@+id/login_form"
