@@ -26,13 +26,18 @@ public class EventList extends ArrayAdapter<EventDetail>{
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         LayoutInflater inflater =context.getLayoutInflater();
         View listViewItem = inflater.inflate(R.layout.list_layout,null,true);
-        TextView textVieweventName = (TextView) listViewItem.findViewById(R.id.textView);
-        TextView textVieweventcontact = (TextView) listViewItem.findViewById(R.id.textView2);
+        TextView textViewName = (TextView) listViewItem.findViewById(R.id.viewname);
+        TextView textViewemail = (TextView) listViewItem.findViewById(R.id.viewemail);
+        TextView textVieweventname= (TextView) listViewItem.findViewById(R.id.vieweventName);
+        TextView textViewphone= (TextView) listViewItem.findViewById(R.id.viewphone);
+        TextView textViewabstract = (TextView) listViewItem.findViewById(R.id.viewAbstract);
 
         EventDetail event = EventList.get(position);
-        textVieweventName.setText(EventDetail.getEventName());
-        textVieweventcontact.setText(EventDetail.getPhoneNumber());
-
+        textViewName.setText(EventDetail.getName());
+        textViewemail.setText(EventDetail.getEmail());
+        textVieweventname.setText(EventDetail.getEventName());
+        textViewphone.setText(EventDetail.getPhoneNumber());
+        textViewabstract.setText(EventDetail.getAbstract());
         return listViewItem;
     }
 }

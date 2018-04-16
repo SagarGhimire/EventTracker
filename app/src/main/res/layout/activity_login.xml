@@ -22,12 +22,12 @@
         android:visibility="gone" />
 
     <ImageView
-        android:layout_width="90dp"
-        android:layout_height="90dp"
+        android:layout_width="89dp"
+        android:layout_height="73dp"
         app:srcCompat="@drawable/nw" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="232dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:fontFamily="cursive"
@@ -38,17 +38,25 @@
 
 
     <EditText
-        android:id="@+id/email"
+        android:id="@+id/emailgiven"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="919number"
-        android:inputType="number" />
+        android:hint="itsme@gmail.com"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id="@+id/passwordgiven"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="****"
+        android:inputType="text" />
 
     <ScrollView
         android:id="@+id/login_form"
-        android:layout_width="288dp"
-        android:layout_height="148dp">
+        android:layout_width="284dp"
+        android:layout_height="wrap_content">
 
 
         <LinearLayout
@@ -75,6 +83,23 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="Sign in as Admin"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btntoregister"
+                style="?android:textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Register User"
+                android:textStyle="bold" />
+            <Button
+                android:id="@+id/ResetBtn"
+                style="?android:textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Forgot My Password"
                 android:textStyle="bold" />
 
         </LinearLayout>

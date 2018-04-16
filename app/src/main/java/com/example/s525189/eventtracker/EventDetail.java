@@ -5,20 +5,20 @@ package com.example.s525189.eventtracker;
  */
 
 public class EventDetail {
-    String id;
-    String name;
-    String email;
-    String eventName;
-    String phoneNumber;
+    private static String id;
+    private  static  String name;
+    private static  String email;
+   private static  String eventName;
+    private static String phoneNumber;
 
-    String Abstract;
+    private static String Abstract;
 
     public EventDetail(){
 
     }
     public EventDetail(String id,String name, String email,
-                        String eventName,String phoneNumber, String Abstract ){
-    this.id =id;
+                        String phoneNumber,String eventName, String Abstract ){
+        this.id =id;
         this.name =name;
         this.email =email;
         this.phoneNumber = phoneNumber;
@@ -26,11 +26,11 @@ public class EventDetail {
         this.Abstract= Abstract;
 }
 
-    public String getId() {
-        return id;
-    }
+   // public String getId() {
+        //return id;
+    //}
 
-    public String getName() {
+    public static String getName() {
         return name;
     }
 
@@ -38,7 +38,7 @@ public class EventDetail {
         this.name = name;
     }
 
-    public String getEmail() {
+    public static String getEmail() {
         return email;
     }
 
@@ -46,7 +46,7 @@ public class EventDetail {
         this.email = email;
     }
 
-    public String getPhoneNumber() {
+    public static String getPhoneNumber() {
         return phoneNumber;
     }
 
@@ -54,7 +54,7 @@ public class EventDetail {
         this.phoneNumber = phoneNumber;
     }
 
-    public String getEventName() {
+    public static String getEventName() {
         return eventName;
     }
 
@@ -62,11 +62,11 @@ public class EventDetail {
         this.eventName = eventName;
     }
 
-    public String getAbstract() {
+    public static String getAbstract() {
         return Abstract;
     }
 
     public void setAbstract(String anAbstract) {
-        Abstract = anAbstract;
+        this.Abstract = anAbstract;
     }
 }
