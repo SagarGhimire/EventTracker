@@ -13,12 +13,28 @@ public class EventDetail {
    String summary;
    String date;
 
+<<<<<<< Updated upstream
+=======
+    String summary;
+>>>>>>> Stashed changes
 
 
 
     public EventDetail() {
 
     }
+<<<<<<< Updated upstream
+=======
+    public EventDetail(String id,String name, String email,
+                        String eventName,String phoneNumber, String summary ){
+    this.id =id;
+        this.name =name;
+        this.email =email;
+        this.phoneNumber = phoneNumber;
+        this.eventName=eventName;
+        this.summary= summary;
+}
+>>>>>>> Stashed changes
 
     public EventDetail(String id, String name, String email, String eventName,String date, String phoneNumber, String summary) {
 
@@ -69,6 +85,7 @@ public class EventDetail {
         this.eventName = eventName;
     }
 
+<<<<<<< Updated upstream
     public void setDate(String date) {
         this.date = date;
     }
@@ -85,5 +102,13 @@ public class EventDetail {
         summary = aSummary;
 
 
+=======
+    public String getSummary() {
+        return summary;
+    }
+
+    public void setSummary(String anAbstract) {
+        summary = anAbstract;
+>>>>>>> Stashed changes
     }
 }
