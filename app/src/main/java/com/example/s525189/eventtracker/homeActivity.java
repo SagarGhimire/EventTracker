@@ -7,6 +7,8 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -23,14 +25,15 @@ import java.util.List;
 public class homeActivity extends AppCompatActivity {
     private TextView infoTextView;
     private BottomNavigationView bottomNavigationView;
-    private
     DatabaseReference databaseEvents;
-    final List<String> eventLister = new ArrayList<>();
+     final List<String> eventLister = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         final ArrayAdapter<String> detailEvents = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,eventLister);
         setContentView(R.layout.activity_home);
+
         databaseEvents = FirebaseDatabase.getInstance().getReference();
         databaseEvents.child("events").addValueEventListener(new ValueEventListener() {
             @Override
@@ -42,21 +45,28 @@ public class homeActivity extends AppCompatActivity {
                         String eventName = detail.getEventName();
                         eventLister.add(eventName);
                     }
-
-                    ListView myList3 = findViewById(R.id.list1);
+                    final ListView myList3 = (ListView)findViewById(R.id.list1);
                     myList3.setAdapter(detailEvents);
+                    myList3.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            String eN = myList3.getItemAtPosition(position).toString();
+                           Intent u = new Intent(homeActivity.this,description.class);
+                           u.putExtra("EventName",eN);
+                           startActivity(u);
+                        }
+                    });
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
 
             }
+
             @Override
             public void onCancelled(DatabaseError databaseError) {
 
             }
         });
-
-
         BottomNavigationView  bottomNavigationView1 = (BottomNavigationView) findViewById(R.id.bottomNavigationView);
         bottomNavigationView1.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
