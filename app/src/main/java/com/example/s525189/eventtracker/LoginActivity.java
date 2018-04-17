@@ -8,6 +8,12 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.backendless.Backendless;
+import com.backendless.BackendlessUser;
+import com.backendless.async.callback.AsyncCallback;
+import com.backendless.exceptions.BackendlessFault;
 
 import java.util.ArrayList;
 
@@ -19,6 +25,11 @@ public class LoginActivity extends AppCompatActivity {
     boolean checkInfo;
     TextView txt;
 
+    EditText txtemail;
+    EditText txtpassword;
+    String gotemail;
+    String gotpassword;
+    Button btnLogin, btnReset,btnRegister,AdminSignInButton;
 
     /**
      * Id to identity READ_CONTACTS permission request.
@@ -36,17 +47,25 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        dummyData.add("919512551");
+        /*dummyData.add("919512551");
         dummyData.add("919508569");
         dummyData.add("919593265");
         dummyData.add("919511639");
         txt = (TextView) findViewById(R.id.labelTV);
-        txt.setVisibility(View.GONE);
+        txt.setVisibility(View.GONE);*/
 
 
-        Button mEmailSignInButton = (Button) findViewById(R.id.email_sign_in_button);
+        btnLogin= (Button) findViewById(R.id.email_sign_in_button);
+        btnReset =(Button)findViewById(R.id.ResetBtn);
+        AdminSignInButton = (Button) findViewById(R.id.admin_sign_in_button);
+        btnRegister = (Button) findViewById(R.id.btntoregister);
 
-        mEmailSignInButton.setOnClickListener(new OnClickListener() {
+
+        txtemail =(EditText) findViewById(R.id.emailgiven);
+        txtpassword=(EditText)findViewById(R.id.passwordgiven);
+
+
+        /*mEmailSignInButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
                 EditText dummyNum = (EditText) findViewById(R.id.email);
@@ -64,18 +83,69 @@ public class LoginActivity extends AppCompatActivity {
 
                 }
             }
+        });*/
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                gotemail = txtemail.getText().toString();
+                gotpassword =txtpassword.getText().toString();
+                Log.d("",""+ gotpassword+""+gotemail);
+
+                Backendless.UserService.login(gotemail, gotpassword, new AsyncCallback<BackendlessUser>() {
+                    @Override
+                    public void handleResponse(BackendlessUser response) {
+                        Log.d("good inside", "gooood");
+                        Intent i = new Intent(LoginActivity.this, homeActivity.class);
+                        startActivity(i);
+                    }
+
+                    @Override
+                    public void handleFault(BackendlessFault fault) {
+                        Log.d("Error inside", "errr");
+                        Toast.makeText(LoginActivity.this, fault.getMessage(), Toast.LENGTH_LONG).show();
+                    }
+                },true);
+
+            }
         });
 
 
-        Button AdminSignInButton = (Button) findViewById(R.id.admin_sign_in_button);
-        AdminSignInButton.setOnClickListener(new OnClickListener() {
+        btnReset.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent x = new Intent(LoginActivity.this, AdminLogin.class);
+                Intent x = new Intent(LoginActivity.this, ResetPassword.class);
                 startActivity(x);
             }
         });
 
+<<<<<<< HEAD
+=======
+
+
+
+        btnRegister.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent m = new Intent(LoginActivity.this, Register.class);
+                startActivity(m);
+                }
+                });
+
+
+
+
+                AdminSignInButton.setOnClickListener(new OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent x = new Intent(LoginActivity.this, AdminLogin.class);
+                        startActivity(x);
+                    }
+                });
+
+
+>>>>>>> 5fceb8aa0b11cf97a7b7ba0d2286da1d8432cc82
     }
 
     public static boolean checkAuthentication(ArrayList<String> a, String data) {

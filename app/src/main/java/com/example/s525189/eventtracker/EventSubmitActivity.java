@@ -16,7 +16,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class EventSubmitActivity extends AppCompatActivity {
 
 
-    private Button submitButton;
+    private Button submitBtn;
     EditText name;
     EditText email;
     EditText eventName;
@@ -24,6 +24,9 @@ public class EventSubmitActivity extends AppCompatActivity {
     EditText Summary;
 
     DatabaseReference databaseEvents;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,9 +34,9 @@ public class EventSubmitActivity extends AppCompatActivity {
         Log.d("second access", "starting web action");
 
         databaseEvents= FirebaseDatabase.getInstance().getReference("events");
-        Button submitBtn = (Button) findViewById(R.id.submitButton);
+        submitBtn = (Button) findViewById(R.id.submitButton);
         name = (EditText) findViewById(R.id.name);
-        email = (EditText) findViewById(R.id.email);
+        email = (EditText) findViewById(R.id.emailgiven);
         eventName = (EditText) findViewById(R.id.eventName);
         phone = (EditText) findViewById(R.id.phone);
        Summary = (EditText) findViewById(R.id.Summary);
@@ -53,21 +56,33 @@ public class EventSubmitActivity extends AppCompatActivity {
 
     public void addEvent(){
         String getname = name.getText().toString().trim();
+<<<<<<< HEAD
         String getemail = email.getText().toString();
         String geteventName = eventName.getText().toString();
         String getphone = phone.getText().toString();
         String getSummary = Summary.getText().toString();
+=======
+        String getemail = email.getText().toString().trim();
+        String geteventName = eventName.getText().toString().trim();
+        String getphone = phone.getText().toString().trim();
+        String getabstract = Abstract.getText().toString().trim();
+>>>>>>> 5fceb8aa0b11cf97a7b7ba0d2286da1d8432cc82
 
         if(!TextUtils.isEmpty(getname) && !TextUtils.isEmpty(getemail)&&!TextUtils.isEmpty(geteventName)
                 && !TextUtils.isEmpty(getphone) && !TextUtils.isEmpty(getSummary)){
 
             String id =databaseEvents.push().getKey();
+<<<<<<< HEAD
             EventDetail event1 = new EventDetail(id,getname, getemail,geteventName,getphone,getSummary);
+=======
+            EventDetail event1 = new EventDetail(id, getname, getemail,getphone,geteventName,getabstract);
+>>>>>>> 5fceb8aa0b11cf97a7b7ba0d2286da1d8432cc82
             databaseEvents.child(id).setValue(event1);
+            Log.d("New", "added1");
             Toast.makeText(this,"EventAdded",Toast.LENGTH_LONG).show();
         }
         else{
-            Toast.makeText(this, "The Field shoul not be empty! Please Fill all the " +
+            Toast.makeText(this, "The Field should not be empty! Please Fill all the " +
                     "blank fields!", Toast.LENGTH_LONG).show();
         }
     }

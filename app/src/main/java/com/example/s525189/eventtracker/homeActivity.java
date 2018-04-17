@@ -80,7 +80,13 @@ public class homeActivity extends AppCompatActivity {
                     startActivity(webit);
                     Log.d("web access", "returned from start activity");
 
+<<<<<<< HEAD
                 } else if (item.getItemId() == R.id.venue) {
+=======
+                }
+
+                 else if (item.getItemId() == R.id.venue) {
+>>>>>>> 5fceb8aa0b11cf97a7b7ba0d2286da1d8432cc82
                     Intent x = new Intent(homeActivity.this, VenuActivity.class);
                     startActivity(x);
 
@@ -89,6 +95,9 @@ public class homeActivity extends AppCompatActivity {
                     startActivity(prfle);
 
 
+                }else if(item.getItemId() ==R.id.events){
+                    Intent y = new Intent(homeActivity.this, event_layout.class);
+                    startActivity(y);
                 }
 
                 return false;

@@ -77,37 +77,48 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom">
+        android:layout_height="560dp"
+        android:layout_gravity="bottom"
+        tools:layout_editor_absoluteX="144dp"
+        tools:layout_editor_absoluteY="409dp">
 
         <android.support.design.widget.BottomNavigationView
             android:id="@+id/bottomNavigationView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf ="parent"
-            app:layout_constraintVertical_bias="1"
             android:layout_marginTop="550dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_bias="1"
             design:menu="@menu/menu_map" />
+
+        <ListView
+            android:id="@+id/myList"
+            android:layout_width="254dp"
+            android:layout_height="200dp"
+            android:layout_alignEnd="@+id/linearLayout2"
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="9dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="200dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.097" />
+
+        <Button
+            android:id="@+id/logoutbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Logout"
+            android:layout_gravity="center_horizontal"
+
+            />
+
     </FrameLayout>
-
-    <ListView
-        android:id="@+id/myList"
-        android:layout_width="276dp"
-        android:layout_height="200dp"
-        android:layout_alignEnd="@+id/linearLayout2"
-        android:layout_alignParentTop="true"
-        android:layout_marginBottom="9dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="200dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.097" />
-
 
 
 </android.support.constraint.ConstraintLayout>

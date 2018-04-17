@@ -11,8 +11,6 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-import static com.example.s525189.eventtracker.LoginActivity.checkAuthentication;
-
 public class AdminLogin extends AppCompatActivity {
     ArrayList<String> adminData = new ArrayList<>();
     boolean checkInfo;
@@ -30,17 +28,17 @@ public class AdminLogin extends AppCompatActivity {
 
 
         Button mEmailSignInButton = (Button) findViewById(R.id.email_sign_in_button);
-        EditText dummyPswd = (EditText) findViewById(R.id.password);
+        EditText dummyPswd = (EditText) findViewById(R.id.Confirmpassword);
         dummyPswd.setHint("Password");
         dummyPswd.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
 
         mEmailSignInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                EditText dummyEmail = (EditText) findViewById(R.id.email);
+                EditText dummyEmail = (EditText) findViewById(R.id.emailgiven);
                 String dummyADminEmail = dummyEmail.getText().toString();
 
-                EditText dummyPswd = (EditText) findViewById(R.id.password);
+                EditText dummyPswd = (EditText) findViewById(R.id.Confirmpassword);
                 dummyPswd.setHint("Password");
                 dummyPswd.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
                 String dummyAdminPswd = dummyPswd.getText().toString();

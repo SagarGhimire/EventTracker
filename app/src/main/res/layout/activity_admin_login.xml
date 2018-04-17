@@ -39,7 +39,7 @@
 
 
     <EditText
-        android:id="@+id/email"
+        android:id="@+id/emailgiven"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -47,7 +47,7 @@
         android:inputType="text" />
 
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/Confirmpassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"

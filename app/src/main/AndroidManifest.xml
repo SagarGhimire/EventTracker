@@ -7,8 +7,10 @@
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
+        android:name=".BackendApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="Home"
@@ -24,12 +26,15 @@
         <activity android:name=".description"/>
         <activity android:name=".AdminLogin" />
         <activity android:name=".LoginActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".event_layout" />
+        <activity android:name=".Register" />
+        <activity android:name=".ResetPassword"></activity>
     </application>
-
 
 </manifest>
