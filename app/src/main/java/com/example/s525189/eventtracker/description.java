@@ -44,9 +44,6 @@ public class description extends AppCompatActivity {
                         Log.d("skd",ed.getEventName()+""+ed.getSummary()+""+ed.getName());
                         eventName.setText(ed.getEventName());
                         abstractDetail.setText(ed.getSummary());
-                        contactAt.setText(ed.getId());
-
-
                     }
                 }
             }

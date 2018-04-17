@@ -22,7 +22,6 @@
         <activity android:name=".AdminActivity" />
         <activity android:name=".EventSubmitActivity" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".VenuActivity" />
         <activity android:name=".description"/>
         <activity android:name=".AdminLogin" />
         <activity android:name=".LoginActivity">
@@ -32,7 +31,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".event_layout" />
         <activity android:name=".Register" />
         <activity android:name=".ResetPassword"></activity>
     </application>

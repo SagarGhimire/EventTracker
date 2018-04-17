@@ -22,6 +22,7 @@ public class EventSubmitActivity extends AppCompatActivity {
     EditText eventName;
     EditText phone;
     EditText Summary;
+    EditText date1;
 
     DatabaseReference databaseEvents;
 
@@ -40,6 +41,7 @@ public class EventSubmitActivity extends AppCompatActivity {
         eventName = (EditText) findViewById(R.id.eventName);
         phone = (EditText) findViewById(R.id.phone);
        Summary = (EditText) findViewById(R.id.Summary);
+       date1 =(EditText) findViewById(R.id.date1);
 
 
         submitBtn.setOnClickListener(new View.OnClickListener() {
@@ -56,27 +58,21 @@ public class EventSubmitActivity extends AppCompatActivity {
 
     public void addEvent(){
         String getname = name.getText().toString().trim();
-<<<<<<< HEAD
         String getemail = email.getText().toString();
         String geteventName = eventName.getText().toString();
         String getphone = phone.getText().toString();
         String getSummary = Summary.getText().toString();
-=======
-        String getemail = email.getText().toString().trim();
-        String geteventName = eventName.getText().toString().trim();
-        String getphone = phone.getText().toString().trim();
-        String getabstract = Abstract.getText().toString().trim();
->>>>>>> 5fceb8aa0b11cf97a7b7ba0d2286da1d8432cc82
+        String getDate = date1.getText().toString();
+
+
 
         if(!TextUtils.isEmpty(getname) && !TextUtils.isEmpty(getemail)&&!TextUtils.isEmpty(geteventName)
                 && !TextUtils.isEmpty(getphone) && !TextUtils.isEmpty(getSummary)){
 
             String id =databaseEvents.push().getKey();
-<<<<<<< HEAD
-            EventDetail event1 = new EventDetail(id,getname, getemail,geteventName,getphone,getSummary);
-=======
-            EventDetail event1 = new EventDetail(id, getname, getemail,getphone,geteventName,getabstract);
->>>>>>> 5fceb8aa0b11cf97a7b7ba0d2286da1d8432cc82
+            EventDetail event1 = new EventDetail(id,getname, getemail,geteventName,getDate,getphone,getSummary);
+
+
             databaseEvents.child(id).setValue(event1);
             Log.d("New", "added1");
             Toast.makeText(this,"EventAdded",Toast.LENGTH_LONG).show();

@@ -33,6 +33,7 @@ public class homeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         final ArrayAdapter<String> detailEvents = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,eventLister);
         setContentView(R.layout.activity_home);
+        Log.d("HomeActivity","dsafa");
 
         databaseEvents = FirebaseDatabase.getInstance().getReference();
         databaseEvents.child("events").addValueEventListener(new ValueEventListener() {
@@ -80,24 +81,13 @@ public class homeActivity extends AppCompatActivity {
                     startActivity(webit);
                     Log.d("web access", "returned from start activity");
 
-<<<<<<< HEAD
-                } else if (item.getItemId() == R.id.venue) {
-=======
-                }
 
-                 else if (item.getItemId() == R.id.venue) {
->>>>>>> 5fceb8aa0b11cf97a7b7ba0d2286da1d8432cc82
-                    Intent x = new Intent(homeActivity.this, VenuActivity.class);
-                    startActivity(x);
 
                 } else if (item.getItemId() == R.id.profile) {
                     Intent prfle = new Intent(homeActivity.this, ProfileActivity.class);
                     startActivity(prfle);
 
 
-                }else if(item.getItemId() ==R.id.events){
-                    Intent y = new Intent(homeActivity.this, event_layout.class);
-                    startActivity(y);
                 }
 
                 return false;
