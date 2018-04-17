@@ -21,13 +21,14 @@ public class description extends AppCompatActivity {
     ImageView imgV;
     DatabaseReference data;
     StorageReference storageReference;
+    String val;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_description);
         Intent i = getIntent();
-        String val = i.getStringExtra("EventName");
+        val = i.getStringExtra("EventName");
         final TextView detail = (TextView)findViewById(R.id.detail);
         final TextView eventName = (TextView) findViewById(R.id.eventName);
         final TextView contactAt = (TextView) findViewById(R.id.contactAt);
@@ -60,7 +61,9 @@ public class description extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent i = new Intent( description.this, ProfileActivity.class);
+                i.putExtra("EventName",val);
                 startActivity(i);
             }
         });

@@ -32,12 +32,16 @@ public class ProfileActivity extends AppCompatActivity {
     private BottomNavigationView bottomNavigationView;
     String data;
     Button btnLogout;
+    String val;
+
 TextView emailtxt, Fnametxt, Lnametxt,errortxt;
 String gotemail, gotFname, gotLname, gotError;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+        Intent i = getIntent();
+        val = i.getStringExtra("EventName");
 
         bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -62,6 +66,7 @@ String gotemail, gotFname, gotLname, gotError;
                 return false;
             }
         });
+
 
 
         String userObjectId = UserIdStorageFactory.instance().getStorage().get();
@@ -103,9 +108,7 @@ String gotemail, gotFname, gotLname, gotError;
 
 
         final ArrayList<String> item = new ArrayList<>();
-        item.add("Email" );
-        item.add("First Name");
-        item.add("Last Name");
+        item.add(val);
 
 
         ListAdapter itemAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, item) {
