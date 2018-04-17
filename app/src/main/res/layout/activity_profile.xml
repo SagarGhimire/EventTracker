@@ -14,15 +14,17 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/gradient" />
+        android:background="@drawable/gradient"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
 
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="84dp"
+        tools:layout_editor_absoluteY="0dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -30,8 +32,8 @@
             android:layout_margin="30dp">
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:layout_width="120dp"
-                android:layout_height="150dp"
+                android:layout_width="99dp"
+                android:layout_height="84dp"
                 android:layout_centerHorizontal="true"
                 android:elevation="1dp"
                 android:src="@drawable/avatar" />
@@ -43,17 +45,16 @@
 
                 <android.support.v7.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="148dp"
                     android:layout_marginTop="80dp"
+
                     app:cardCornerRadius="5dp"
-                    app:contentPaddingBottom="10dp"
-                    app:contentPaddingLeft="15dp"
-                    app:contentPaddingRight="10dp"
-                    app:contentPaddingTop="10dp">
+                 >
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/gradient"
                         android:orientation="vertical">
 
                         <!--<TextView-->
@@ -65,6 +66,60 @@
                         <!--android:text="Nista Shrestha"-->
                         <!--android:textSize="30dp" />-->
 
+
+                        <TextView
+                            android:id="@+id/FName"
+                            android:layout_width="267dp"
+                            android:layout_height="30dp"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:text=""
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="15dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.067"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.522" />
+
+                        <TextView
+                            android:id="@+id/LName"
+                            android:layout_width="272dp"
+                            android:layout_height="28dp"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:text=""
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="15dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.067"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.605" />
+
+                        <TextView
+                            android:id="@+id/emailview"
+                            android:layout_width="274dp"
+                            android:layout_height="25dp"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:text=""
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="15dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.067"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.445" />
                     </LinearLayout>
 
 
@@ -77,10 +132,10 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="560dp"
+        android:layout_height="200dp"
         android:layout_gravity="bottom"
-        tools:layout_editor_absoluteX="144dp"
-        tools:layout_editor_absoluteY="409dp">
+        tools:layout_editor_absoluteX="20dp"
+        tools:layout_editor_absoluteY="450dp">
 
         <android.support.design.widget.BottomNavigationView
             android:id="@+id/bottomNavigationView"
@@ -92,33 +147,68 @@
             app:layout_constraintVertical_bias="1"
             design:menu="@menu/menu_map" />
 
-        <ListView
-            android:id="@+id/myList"
-            android:layout_width="254dp"
-            android:layout_height="200dp"
-            android:layout_alignEnd="@+id/linearLayout2"
-            android:layout_alignParentTop="true"
-            android:layout_marginBottom="9dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="200dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.097" />
 
-        <Button
-            android:id="@+id/logoutbtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Logout"
-            android:layout_gravity="center_horizontal"
 
-            />
 
     </FrameLayout>
+
+    <ListView
+        android:id="@+id/myList"
+        android:layout_width="213dp"
+        android:layout_height="114dp"
+        android:layout_alignEnd="@+id/linearLayout2"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="9dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="200dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.051"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.702" />
+
+    <Button
+        android:id="@+id/logoutbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="8dp"
+
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Logout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.539" />
+
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <TextView
+        android:id="@+id/Errormsg"
+        android:layout_width="wrap_content"
+        android:layout_height="15dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.476"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.441" />
 
 
 </android.support.constraint.ConstraintLayout>

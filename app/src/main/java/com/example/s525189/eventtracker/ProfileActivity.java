@@ -3,6 +3,7 @@ package com.example.s525189.eventtracker;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
@@ -15,11 +16,14 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.backendless.Backendless;
+import com.backendless.BackendlessUser;
 import com.backendless.async.callback.AsyncCallback;
 import com.backendless.exceptions.BackendlessFault;
+import com.backendless.persistence.local.UserIdStorageFactory;
 
 import java.util.ArrayList;
 
@@ -28,7 +32,8 @@ public class ProfileActivity extends AppCompatActivity {
     private BottomNavigationView bottomNavigationView;
     String data;
     Button btnLogout;
-
+TextView emailtxt, Fnametxt, Lnametxt,errortxt;
+String gotemail, gotFname, gotLname, gotError;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,8 +63,47 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
 
+
+        String userObjectId = UserIdStorageFactory.instance().getStorage().get();
+        Backendless.Data.of(BackendlessUser.class).findById(userObjectId, new AsyncCallback<BackendlessUser>() {
+            @Override
+            public void handleResponse(BackendlessUser response) {
+                emailtxt = (TextView) findViewById(R.id.emailview);
+                Fnametxt = (TextView) findViewById(R.id.FName);
+                Lnametxt = (TextView) findViewById(R.id.LName);
+
+
+                gotemail = response.getEmail().toString();
+                gotFname = response.getProperty("name").toString();
+                gotLname = response.getProperty("surname").toString();
+
+                Log.d("email", gotemail);
+                Log.d("email", gotFname);
+                Log.d("email", gotLname);
+
+                emailtxt.setText("Email: " +gotemail);
+                Fnametxt.setText("First Name: "+gotFname);
+                Lnametxt.setText("Last Name: "+ gotLname);
+
+
+                //Toast.makeText(ProfileActivity.this, response.getEmail() +"" +response.getProperty("name"),Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void handleFault(BackendlessFault fault) {
+
+                errortxt = (TextView) findViewById(R.id.Errormsg);
+                gotError= fault.getMessage().toString();
+                Log.d("rerror", gotError);
+
+                errortxt.setText(gotError);
+                //Toast.makeText(ProfileActivity.this, fault.getMessage(), Toast.LENGTH_LONG).show();
+            }
+        });
+
+
         final ArrayList<String> item = new ArrayList<>();
-        item.add("id");
+        item.add("Email" );
         item.add("First Name");
         item.add("Last Name");
 
