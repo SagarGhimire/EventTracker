@@ -5,41 +5,39 @@ package com.example.s525189.eventtracker;
  */
 
 public class EventDetail {
-    private static String id;
-    private  static  String name;
-    private static  String email;
-   private static  String eventName;
-    private static String phoneNumber;
+    String id;
+    String name;
+   String email;
+   String eventName;
+   String phoneNumber;
+   String summary;
+   String date;
 
-<<<<<<< HEAD
-    String summary;
-=======
-    private static String Abstract;
->>>>>>> 5fceb8aa0b11cf97a7b7ba0d2286da1d8432cc82
 
-    public EventDetail(){
+
+
+    public EventDetail() {
 
     }
-    public EventDetail(String id,String name, String email,
-<<<<<<< HEAD
-                        String eventName,String phoneNumber, String summary ){
-    this.id =id;
-=======
-                        String phoneNumber,String eventName, String Abstract ){
-        this.id =id;
->>>>>>> 5fceb8aa0b11cf97a7b7ba0d2286da1d8432cc82
-        this.name =name;
-        this.email =email;
-        this.phoneNumber = phoneNumber;
-        this.eventName=eventName;
-        this.summary= summary;
-}
 
-   // public String getId() {
-        //return id;
+    public EventDetail(String id, String name, String email, String eventName,String date, String phoneNumber, String summary) {
+
+
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.eventName = eventName;
+        this.summary = summary;
+        this.date =date;
+    }
+
+    // public String getId() {
+    //return id;
     //}
 
-    public static String getName() {
+
+    public  String getName() {
         return name;
     }
 
@@ -47,7 +45,7 @@ public class EventDetail {
         this.name = name;
     }
 
-    public static String getEmail() {
+    public  String getEmail() {
         return email;
     }
 
@@ -55,7 +53,7 @@ public class EventDetail {
         this.email = email;
     }
 
-    public static String getPhoneNumber() {
+    public  String getPhoneNumber() {
         return phoneNumber;
     }
 
@@ -63,7 +61,7 @@ public class EventDetail {
         this.phoneNumber = phoneNumber;
     }
 
-    public static String getEventName() {
+    public  String getEventName() {
         return eventName;
     }
 
@@ -71,20 +69,21 @@ public class EventDetail {
         this.eventName = eventName;
     }
 
-<<<<<<< HEAD
-    public String getSummary() {
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public  String getSummary() {
         return summary;
     }
 
     public void setSummary(String aSummary) {
         summary = aSummary;
-=======
-    public static String getAbstract() {
-        return Abstract;
-    }
 
-    public void setAbstract(String anAbstract) {
-        this.Abstract = anAbstract;
->>>>>>> 5fceb8aa0b11cf97a7b7ba0d2286da1d8432cc82
+
     }
 }

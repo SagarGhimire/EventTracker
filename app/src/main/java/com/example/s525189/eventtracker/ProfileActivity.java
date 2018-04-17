@@ -1,12 +1,11 @@
 package com.example.s525189.eventtracker;
 
-import android.app.ListActivity;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -23,8 +22,6 @@ import com.backendless.async.callback.AsyncCallback;
 import com.backendless.exceptions.BackendlessFault;
 
 import java.util.ArrayList;
-
-import static java.security.AccessController.getContext;
 
 public class ProfileActivity extends AppCompatActivity {
 
@@ -50,10 +47,7 @@ public class ProfileActivity extends AppCompatActivity {
                     startActivity(webit);
                     Log.d("web access", "returned from start activity");
                 }
-                else if (item.getItemId() == R.id.venue) {
-                    Intent x = new Intent(ProfileActivity.this, VenuActivity.class);
-                    startActivity(x);
-                }
+
 
 //                } else if (item.getItemId() == R.id.profile) {
 //                    Intent prfle = new Intent(ProfileActivity.this,event.class);
