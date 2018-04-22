@@ -19,12 +19,11 @@ public class AdminActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("second access", "starting web action");
                 Intent intent = new Intent(AdminActivity.this, EventSubmitActivity.class);
-                intent.putExtra("Class", "A");
-                startActivityForResult(intent, SECOND_ACTIVITY_REQUEST_CODE);
+               // intent.putExtra("Class", "A");
+                startActivity(intent);
 
-                Log.d("web access", "returned from start activity");
+              //  Log.d("web access", "returned from start activity");
 
             }
         });

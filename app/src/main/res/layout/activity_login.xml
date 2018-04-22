@@ -22,16 +22,16 @@
         android:visibility="gone" />
 
     <ImageView
-        android:layout_width="89dp"
-        android:layout_height="73dp"
-        app:srcCompat="@drawable/nw" />
+        android:layout_width="134dp"
+        android:layout_height="90dp"
+        app:srcCompat="@drawable/logo1" />
 
     <TextView
         android:layout_width="232dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:fontFamily="cursive"
-        android:text="Lets Connect"
+        android:text="Bearcat's Events"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         android:textColor="@android:color/background_light"
         android:textStyle="bold" />
@@ -110,6 +110,7 @@
         android:id="@+id/labelTV"
         android:layout_width="match_parent"
         android:layout_height="30dp"
-        android:text="TextView" />
+        android:text="TextView"
+        android:visibility="gone"/>
 
 </LinearLayout>

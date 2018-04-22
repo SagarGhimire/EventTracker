@@ -28,7 +28,11 @@ public class description extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_description);
         Intent i = getIntent();
+<<<<<<< HEAD
        val = i.getStringExtra("EventName");
+=======
+        val = i.getStringExtra("EventName");
+>>>>>>> 2aa2d16227fcda7b7f43d731d6cd9b3c0a4379e1
         final TextView detail = (TextView)findViewById(R.id.detail);
         final TextView eventName = (TextView) findViewById(R.id.eventName);
         final TextView contactAt = (TextView) findViewById(R.id.contactAt);
@@ -65,6 +69,7 @@ public class description extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent i = new Intent( description.this, ProfileActivity.class);
                 i.putExtra("EventName",val);
                 startActivity(i);
