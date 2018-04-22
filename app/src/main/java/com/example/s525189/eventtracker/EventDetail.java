@@ -6,26 +6,18 @@ public class EventDetail {
    String email;
    String eventName;
    String phoneNumber;
-   String summary;
    String date;
-<<<<<<< HEAD
+
    String time;
    String place;
-=======
 
-<<<<<<< Updated upstream
-=======
+
     String summary;
->>>>>>> Stashed changes
-
->>>>>>> 2aa2d16227fcda7b7f43d731d6cd9b3c0a4379e1
 
 
     public EventDetail() {
 
     }
-<<<<<<< Updated upstream
-=======
     public EventDetail(String id,String name, String email,
                         String eventName,String phoneNumber, String summary ){
     this.id =id;
@@ -35,7 +27,6 @@ public class EventDetail {
         this.eventName=eventName;
         this.summary= summary;
 }
->>>>>>> Stashed changes
 
     public EventDetail(String id, String name, String email, String eventName,String date, String phoneNumber, String summary, String time,String place) {
 
@@ -113,7 +104,6 @@ public class EventDetail {
         this.eventName = eventName;
     }
 
-<<<<<<< Updated upstream
     public void setDate(String date) {
         this.date = date;
     }
@@ -128,15 +118,5 @@ public class EventDetail {
 
     public void setSummary(String aSummary) {
         summary = aSummary;
-
-
-=======
-    public String getSummary() {
-        return summary;
-    }
-
-    public void setSummary(String anAbstract) {
-        summary = anAbstract;
->>>>>>> Stashed changes
     }
 }

@@ -3,7 +3,6 @@ package com.example.s525189.eventtracker;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
@@ -33,14 +32,8 @@ public class ProfileActivity extends AppCompatActivity {
     String data;
     Button btnLogout;
     String val;
-
-<<<<<<< HEAD
-    TextView emailtxt, Fnametxt, Lnametxt,errortxt;
-    String gotemail, gotFname, gotLname, gotError;
-=======
 TextView emailtxt, Fnametxt, Lnametxt,errortxt;
 String gotemail, gotFname, gotLname, gotError;
->>>>>>> 2aa2d16227fcda7b7f43d731d6cd9b3c0a4379e1
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
