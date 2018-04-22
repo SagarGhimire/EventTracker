@@ -48,8 +48,14 @@
         android:id="@+id/date1"
         android:layout_width="359dp"
         android:layout_height="58dp"
-        android:hint="Date"
-        />
+        android:hint="Date(MM/DD/YYYY)" />
+
+    <EditText
+        android:id="@+id/time1"
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:hint="Time"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title.Inverse" />
 
     <EditText
         android:id="@+id/phone"
@@ -58,6 +64,13 @@
         android:backgroundTint="@color/black"
         android:hint="Phone"
         android:inputType="phone" />
+
+    <EditText
+        android:id="@+id/place1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="place"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title" />
 
     <EditText
         android:id="@+id/Summary"

@@ -14,8 +14,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class EventSubmitActivity extends AppCompatActivity {
-
-
     private Button submitBtn;
     EditText name;
     EditText email;
@@ -23,11 +21,9 @@ public class EventSubmitActivity extends AppCompatActivity {
     EditText phone;
     EditText Summary;
     EditText date1;
-
+    EditText time1;
+    EditText place;
     DatabaseReference databaseEvents;
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +38,9 @@ public class EventSubmitActivity extends AppCompatActivity {
         phone = (EditText) findViewById(R.id.phone);
        Summary = (EditText) findViewById(R.id.Summary);
        date1 =(EditText) findViewById(R.id.date1);
+       time1 =(EditText)findViewById(R.id.time1);
+       place =(EditText)findViewById(R.id.place1);
+
 
 
         submitBtn.setOnClickListener(new View.OnClickListener() {
@@ -63,6 +62,8 @@ public class EventSubmitActivity extends AppCompatActivity {
         String getphone = phone.getText().toString();
         String getSummary = Summary.getText().toString();
         String getDate = date1.getText().toString();
+        String getTime = time1.getText().toString();
+        String getplace = place.getText().toString();
 
 
 
@@ -70,7 +71,7 @@ public class EventSubmitActivity extends AppCompatActivity {
                 && !TextUtils.isEmpty(getphone) && !TextUtils.isEmpty(getSummary)){
 
             String id =databaseEvents.push().getKey();
-            EventDetail event1 = new EventDetail(id,getname, getemail,geteventName,getDate,getphone,getSummary);
+            EventDetail event1 = new EventDetail(id,getname, getemail,geteventName,getDate,getphone,getSummary,getTime,getplace);
 
 
             databaseEvents.child(id).setValue(event1);
