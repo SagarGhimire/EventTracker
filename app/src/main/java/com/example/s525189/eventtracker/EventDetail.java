@@ -1,26 +1,34 @@
 package com.example.s525189.eventtracker;
 
-/**
- * Created by S524878 on 4/2/2018.
- */
-
 public class EventDetail {
     String id;
     String name;
    String email;
    String eventName;
    String phoneNumber;
-   String summary;
    String date;
 
+   String time;
+   String place;
 
+
+    String summary;
 
 
     public EventDetail() {
 
     }
+    public EventDetail(String id,String name, String email,
+                        String eventName,String phoneNumber, String summary ){
+    this.id =id;
+        this.name =name;
+        this.email =email;
+        this.phoneNumber = phoneNumber;
+        this.eventName=eventName;
+        this.summary= summary;
+}
 
-    public EventDetail(String id, String name, String email, String eventName,String date, String phoneNumber, String summary) {
+    public EventDetail(String id, String name, String email, String eventName,String date, String phoneNumber, String summary, String time,String place) {
 
 
         this.id = id;
@@ -30,12 +38,39 @@ public class EventDetail {
         this.eventName = eventName;
         this.summary = summary;
         this.date =date;
+        this.time =time;
+        this.place =place;
     }
+
 
     // public String getId() {
     //return id;
     //}
 
+
+    public String getId() {
+        return id;
+    }
+
+    public String getPlace() {
+        return place;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setPlace(String place) {
+        this.place = place;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
 
     public  String getName() {
         return name;
@@ -83,7 +118,5 @@ public class EventDetail {
 
     public void setSummary(String aSummary) {
         summary = aSummary;
-
-
     }
 }

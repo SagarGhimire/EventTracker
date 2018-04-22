@@ -20,21 +20,28 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 public class homeActivity extends AppCompatActivity {
     private TextView infoTextView;
     private BottomNavigationView bottomNavigationView;
     DatabaseReference databaseEvents;
-     final List<String> eventLister = new ArrayList<>();
+    final List<String> eventLister = new ArrayList<>();
+    Date TaskDate;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        final ArrayAdapter<String> detailEvents = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,eventLister);
+        final ArrayAdapter<String> detailEvents = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, eventLister);
         setContentView(R.layout.activity_home);
-        Log.d("HomeActivity","dsafa");
 
+        final Date currDate = Calendar.getInstance().getTime();
+
+
+        Log.d("Date is", ""+currDate);
         databaseEvents = FirebaseDatabase.getInstance().getReference();
         databaseEvents.child("events").addValueEventListener(new ValueEventListener() {
             @Override
@@ -44,17 +51,18 @@ public class homeActivity extends AppCompatActivity {
                     for (DataSnapshot ds : children) {
                         EventDetail detail = ds.getValue(EventDetail.class);
                         String eventName = detail.getEventName();
+                        String eventDate = detail.getDate();
                         eventLister.add(eventName);
                     }
-                    final ListView myList3 = (ListView)findViewById(R.id.list1);
+                    final ListView myList3 = (ListView) findViewById(R.id.list1);
                     myList3.setAdapter(detailEvents);
                     myList3.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                             String eN = myList3.getItemAtPosition(position).toString();
-                           Intent u = new Intent(homeActivity.this,description.class);
-                           u.putExtra("EventName",eN);
-                           startActivity(u);
+                            Intent u = new Intent(homeActivity.this, description.class);
+                            u.putExtra("EventName", eN);
+                            startActivity(u);
                         }
                     });
                 } catch (Exception e) {
@@ -68,7 +76,7 @@ public class homeActivity extends AppCompatActivity {
 
             }
         });
-        BottomNavigationView  bottomNavigationView1 = (BottomNavigationView) findViewById(R.id.bottomNavigationView);
+        BottomNavigationView bottomNavigationView1 = (BottomNavigationView) findViewById(R.id.bottomNavigationView);
         bottomNavigationView1.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem item) {
@@ -80,7 +88,6 @@ public class homeActivity extends AppCompatActivity {
                     webit.setData(weburi);
                     startActivity(webit);
                     Log.d("web access", "returned from start activity");
-
 
 
                 } else if (item.getItemId() == R.id.profile) {

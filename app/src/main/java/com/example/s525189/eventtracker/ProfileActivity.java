@@ -3,7 +3,6 @@ package com.example.s525189.eventtracker;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
@@ -33,7 +32,6 @@ public class ProfileActivity extends AppCompatActivity {
     String data;
     Button btnLogout;
     String val;
-
 TextView emailtxt, Fnametxt, Lnametxt,errortxt;
 String gotemail, gotFname, gotLname, gotError;
     @Override
@@ -115,8 +113,8 @@ String gotemail, gotFname, gotLname, gotError;
             @NonNull
             @Override
             public View getView(int position, @NonNull View convertView, @NonNull ViewGroup parent) {
-               View v =super.getView(position,convertView,parent);
-               return v;
+                View v =super.getView(position,convertView,parent);
+                return v;
             }
 
 
@@ -152,5 +150,4 @@ String gotemail, gotFname, gotLname, gotError;
         });
     }
 }
-
 

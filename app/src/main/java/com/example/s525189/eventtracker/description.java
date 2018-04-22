@@ -28,12 +28,14 @@ public class description extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_description);
         Intent i = getIntent();
+
         val = i.getStringExtra("EventName");
         final TextView detail = (TextView)findViewById(R.id.detail);
         final TextView eventName = (TextView) findViewById(R.id.eventName);
         final TextView contactAt = (TextView) findViewById(R.id.contactAt);
         final TextView abstractDetail = (TextView) findViewById(R.id.abstractDetail);
-
+        final TextView organized = (TextView)findViewById(R.id.Organization);
+        final TextView dateTime = (TextView) findViewById(R.id.dandTime);
         data = FirebaseDatabase.getInstance().getReference().child("events").getRef();
         Query q = data.orderByChild("eventName").equalTo(val);
         q.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -43,8 +45,11 @@ public class description extends AppCompatActivity {
                     for (DataSnapshot friend : dataSnapshot.getChildren()) {
                        EventDetail ed = friend.getValue(EventDetail.class);
                         Log.d("skd",ed.getEventName()+""+ed.getSummary()+""+ed.getName());
-                        eventName.setText(ed.getEventName());
-                        abstractDetail.setText(ed.getSummary());
+                        eventName.setText("Event Name: "+ ed.getEventName());
+                        abstractDetail.setText("Abstract: " +ed.getSummary());
+                        contactAt.setText("Contact At: "+ ed.getEmail()+","+ ed.getPhoneNumber());
+                        organized.setText("Organized by: "+ ed.getName());
+                        dateTime.setText("Happening at: " + ed.getDate() + " "+ ed.getTime() +" at "+ ed.getPlace());
                     }
                 }
             }
