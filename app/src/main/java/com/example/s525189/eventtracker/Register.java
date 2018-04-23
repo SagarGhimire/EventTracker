@@ -1,5 +1,6 @@
 package com.example.s525189.eventtracker;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -49,6 +50,9 @@ public class Register extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 gotemail = txtemail.getText().toString();
+
+
+
                 gotpassword = txtpassword.getText().toString();
                 //gotconfirmpassword = txtconfirmpassword.getText().toString();
                 gotFname = txtFname.getText().toString();
@@ -61,36 +65,42 @@ public class Register extends AppCompatActivity {
 
 
                 }
-                else{
+                else {
+                    if (!EmailValidator.getInstance().validate(txtemail.getText().toString().trim())) {
+                        Toast.makeText(Register.this, "Invalid Email Address!", Toast.LENGTH_LONG).show();;
+                    } else {
 
                 /*} else {
                     Toast.makeText(Register.this, "Password Mismatch!!", Toast.LENGTH_LONG).show();
 
                 }*/
 
-                    BackendlessUser user = new BackendlessUser();
-                    user.setProperty("email", gotemail);
-                    user.setProperty("name", gotFname);
-                    user.setProperty("surname", gotLname);
-                    user.setPassword(gotpassword);
+                        BackendlessUser user = new BackendlessUser();
+                        user.setProperty("email", gotemail);
+                        user.setProperty("name", gotFname);
+                        user.setProperty("surname", gotLname);
+                        user.setPassword(gotpassword);
 
-                    Log.d("email", gotemail);
-                    Log.d("email", gotFname);
-                    Log.d("email", gotLname);
-                    Log.d("email", gotpassword);
+                        Log.d("email", gotemail);
+                        Log.d("email", gotFname);
+                        Log.d("email", gotLname);
+                        Log.d("email", gotpassword);
 
-                    Backendless.UserService.register(user, new AsyncCallback<BackendlessUser>() {
-                        @Override
-                        public void handleResponse(BackendlessUser response) {
-                            Toast.makeText(Register.this, "New User Registered!", Toast.LENGTH_LONG).show();
-                            //dialog.dismiss();
-                        }
+                        Backendless.UserService.register(user, new AsyncCallback<BackendlessUser>() {
+                            @Override
+                            public void handleResponse(BackendlessUser response) {
+                                Toast.makeText(Register.this, "New User Registered!", Toast.LENGTH_LONG).show();
+                                 Intent i = new Intent(Register.this, LoginActivity.class);
+                        startActivity(i);
+                                //dialog.dismiss();
+                            }
 
-                        @Override
-                        public void handleFault(BackendlessFault fault) {
-                            Toast.makeText(Register.this, fault.getMessage(), Toast.LENGTH_LONG).show();
-                        }
-                    });
+                            @Override
+                            public void handleFault(BackendlessFault fault) {
+                                Toast.makeText(Register.this, fault.getMessage(), Toast.LENGTH_LONG).show();
+                            }
+                        });
+                    }
                 }
 
             }
