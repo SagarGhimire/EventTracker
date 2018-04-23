@@ -39,7 +39,7 @@ String gotemail, gotFname, gotLname, gotError;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
         Intent i = getIntent();
-        val = i.getStringExtra("EventName");
+        
 
         bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -106,7 +106,15 @@ String gotemail, gotFname, gotLname, gotError;
 
 
         final ArrayList<String> item = new ArrayList<>();
-        item.add(val);
+        val = i.getStringExtra("EventName");
+        if (val!=null){
+            item.add(val);
+
+        }
+        else{
+            item.add ("No interested events");
+        }
+         
 
 
         ListAdapter itemAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, item) {

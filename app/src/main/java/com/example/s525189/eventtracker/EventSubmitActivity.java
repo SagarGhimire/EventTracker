@@ -52,8 +52,54 @@ public class EventSubmitActivity extends AppCompatActivity {
 
             }
         });
+             upload.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(EventSubmitActivity.this, uploadimg.class);
+                startActivity(i);
 
+            }
+        });
+        email.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+                Is_Valid_Email(email);
+            }
+
+            public void Is_Valid_Email(EditText edt) {
+                if (edt.getText().toString() == null) {
+                    edt.setError("Invalid Email Address");
+                    valid_email = null;
+                } else if (isEmailValid(edt.getText().toString()) == false) {
+                    edt.setError("Invalid Email Address");
+                    valid_email = null;
+                } else {
+                    valid_email = edt.getText().toString();
+                }
+            }
+
+            boolean isEmailValid(CharSequence email) {
+                return android.util.Patterns.EMAIL_ADDRESS.matcher(email)
+                        .matches();
+            } // end of TextWatcher (email)
+
+        });
     }
+
+
+
+    
 
     public void addEvent(){
         String getname = name.getText().toString().trim();
