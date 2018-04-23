@@ -18,23 +18,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".homeActivity" />
-        <activity android:name=".ProfileActivity" />
-        <activity android:name=".AdminActivity" />
-        <activity android:name=".EventSubmitActivity" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".homeActivity"
+            android:label="Home" />
+        <activity android:name=".ProfileActivity"
+        android:label="Profile" />
+        <activity android:name=".AdminActivity" android:label="Admin" />
+        <activity android:name=".EventSubmitActivity"  />
+        <activity android:name=".MainActivity" android:label="Event Details" />
         <activity android:name=".description"/>
-        <activity android:name=".AdminLogin" />
+        <activity android:name=".AdminLogin" android:label="Admin Login" />
         <activity android:name=".uploadimg"></activity>
-        <activity android:name=".LoginActivity">
+        <activity android:name=".LoginActivity"  android:label="Login">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Register" />
-        <activity android:name=".ResetPassword"></activity>
+        <activity android:name=".Register" android:label="Register" />
+        <activity android:name=".ResetPassword" android:label="Reset Password" ></activity>
     </application>
 
 </manifest>
