@@ -91,8 +91,12 @@ public class LoginActivity extends AppCompatActivity {
 
 
                 gotemail = txtemail.getText().toString();
-                gotpassword =txtpassword.getText().toString();
-                Log.d("",""+ gotpassword+""+gotemail);
+                gotpassword = txtpassword.getText().toString();
+
+                if (!EmailValidator.getInstance().validate(txtemail.getText().toString().trim())) {
+                    Toast.makeText(LoginActivity.this, "Invalid Email Address!", Toast.LENGTH_LONG).show();;
+                } else {
+                Log.d("", "" + gotpassword + "" + gotemail);
 
                 Backendless.UserService.login(gotemail, gotpassword, new AsyncCallback<BackendlessUser>() {
                     @Override
@@ -107,7 +111,9 @@ public class LoginActivity extends AppCompatActivity {
                         Log.d("Error inside", "errr");
                         Toast.makeText(LoginActivity.this, fault.getMessage(), Toast.LENGTH_LONG).show();
                     }
-                },true);
+                }, true);
+
+            }
 
             }
         });
