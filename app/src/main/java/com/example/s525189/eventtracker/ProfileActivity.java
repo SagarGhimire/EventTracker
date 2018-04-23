@@ -54,6 +54,10 @@ String gotemail, gotFname, gotLname, gotError;
                     startActivity(webit);
                     Log.d("web access", "returned from start activity");
                 }
+                else if (item.getItemId() == R.id.home){
+                    Intent i = new Intent(ProfileActivity.this, homeActivity.class);
+                    startActivity(i);
+                }
 
 
 //                } else if (item.getItemId() == R.id.profile) {
